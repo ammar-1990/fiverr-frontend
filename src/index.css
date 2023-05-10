@@ -6,3 +6,16 @@
 .navLink{
     @apply cursor-pointer
 }
+
+.swiper-button-prev,
+.swiper-button-next {
+@apply text-gray-700  w-12 h-12   bg-white rounded-full shadow-md    !important
+}
+
+.swiper-button-prev::after, .swiper-button-next::after{
+    @apply  text-base font-bold !important
+}
+
+.myScroll::-webkit-scrollbar{
+    display: none;
+}
