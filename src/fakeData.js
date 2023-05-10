@@ -207,3 +207,53 @@ export const footerData = [
     ],
   },
 ];
+
+
+export const fakeGigs = [
+
+    {
+        id: 1,
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpOCIPOxKGbMo_LhjiZ3kQquwhDkjuNWNPUg&usqp=CAU",
+        pp: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpOCIPOxKGbMo_LhjiZ3kQquwhDkjuNWNPUg&usqp=CAU",
+        desc: "Gig1 desc",
+        username: "Anna Bell",
+        price:110,
+        start:2,
+      },
+    {
+        id: 2,
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpOCIPOxKGbMo_LhjiZ3kQquwhDkjuNWNPUg&usqp=CAU",
+        pp: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpOCIPOxKGbMo_LhjiZ3kQquwhDkjuNWNPUg&usqp=CAU",
+        desc: "Gig2 desc",
+        username: "Anna Bell",
+        price:111,
+        start:3,
+      },
+    {
+        id: 3,
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpOCIPOxKGbMo_LhjiZ3kQquwhDkjuNWNPUg&usqp=CAU",
+        pp: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpOCIPOxKGbMo_LhjiZ3kQquwhDkjuNWNPUg&usqp=CAU",
+        desc: "Gig1 desc",
+        username: "Anna Bell",
+        price:110,
+        start:1,
+      },
+    {
+        id: 4,
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpOCIPOxKGbMo_LhjiZ3kQquwhDkjuNWNPUg&usqp=CAU",
+        pp: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpOCIPOxKGbMo_LhjiZ3kQquwhDkjuNWNPUg&usqp=CAU",
+        desc: "Gig1 desc",
+        username: "Anna Bell",
+        price:100,
+        start:3
+      },
+    {
+        id: 5,
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpOCIPOxKGbMo_LhjiZ3kQquwhDkjuNWNPUg&usqp=CAU",
+        pp: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpOCIPOxKGbMo_LhjiZ3kQquwhDkjuNWNPUg&usqp=CAU",
+        desc: "Gig1 desc",
+        username: "Anna Bell",
+        price:110,
+        start:4
+      },
+]
