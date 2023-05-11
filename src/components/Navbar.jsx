@@ -72,7 +72,7 @@ const Navbar = () => {
                 <div className="p-6 flex flex-col gap-3 absolute top-12  bg-white border rounded-lg w-56 right-0 text-gray-500">
                   {currentUser.isSeller && (
                     <div className="flex flex-col gap-3">
-                      <Link to={"/gigs"}>
+                      <Link to={"/mygigs"}>
                         <span>Gigs</span>
                       </Link>
                       <Link to={"/add"}>

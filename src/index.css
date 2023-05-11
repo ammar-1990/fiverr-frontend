@@ -19,3 +19,13 @@
 .myScroll::-webkit-scrollbar{
     display: none;
 }
+
+
+
+.myScrollTwo::-webkit-scrollbar{
+    @apply w-[6px] 
+}
+
+.myScrollTwo::-webkit-scrollbar-thumb{
+    @apply bg-zinc-600 rounded-full
+}

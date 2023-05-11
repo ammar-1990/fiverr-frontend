@@ -257,3 +257,141 @@ export const fakeGigs = [
         start:4
       },
 ]
+
+
+export const fakeInfo = [
+  {
+    title:'from',
+    info:'USA'
+  },
+  {
+    title:'Avg response time',
+    info:'4 hours'
+  },
+  {
+    title:'Languages',
+    info:'English'
+  },
+  {
+    title:'Member since',
+    info:'Aug 2022'
+  },
+  {
+    title:'Last delivery',
+    info:'1 day'
+  },
+
+]
+
+
+export const myGigs = [
+  {
+    img:'/images/man.png',
+    title:'my gig',
+    price:50,
+    sales:100
+  },
+  {
+    img:'/images/man.png',
+    title:'my gig',
+    price:50,
+    sales:100
+  },
+  {
+    img:'/images/man.png',
+    title:'my gig',
+    price:50,
+    sales:100
+  },
+  {
+    img:'/images/man.png',
+    title:'my gig',
+    price:50,
+    sales:100
+  },
+  {
+    img:'/images/man.png',
+    title:'my gig',
+    price:50,
+    sales:100
+  },
+  {
+    img:'/images/man.png',
+    title:'my gig',
+    price:50,
+    sales:100
+  },
+]
+
+
+export const fakeMessages = [
+  {
+buyer:'user',
+lastmessage:'Just a normal message for testing, nothing is special ',
+date:new Date(Date.now()).toDateString(),
+isRead:false
+  },
+  {
+buyer:'user',
+lastmessage:'Just a normal message for testing, nothing is special ',
+date:new Date(Date.now()).toDateString(),
+isRead:false
+  },
+  {
+buyer:'user',
+lastmessage:'Just a normal message for testing, nothing is special ',
+date:new Date(Date.now()).toDateString(),
+isRead:false
+  },
+  {
+buyer:'user',
+lastmessage:'Just a normal message for testing, nothing is special ',
+date:new Date(Date.now()).toDateString(),
+isRead:true
+  },
+  {
+buyer:'user',
+lastmessage:'Just a normal message for testing, nothing is special ',
+date:new Date(Date.now()).toDateString(),
+isRead:false
+  },
+  {
+buyer:'user',
+lastmessage:'Just a normal message for testing, nothing is special ',
+date:new Date(Date.now()).toDateString(),
+isRead:true
+  },
+
+
+ 
+]
+
+
+
+export const fakeChat = [
+  {
+  img:'/images/man.png',
+  username:'ammar',
+  message:'hello how are you to day ,let us do something to have fun,Just a normal message for testing, nothing is special '  
+  },
+  {
+  img:'/images/man.png',
+  username:'yasser',
+  message:'hello how are you to day ,let us do something to have fun'  
+  },
+  {
+  img:'/images/man.png',
+  username:'ammar',
+  message:'hello how are you to day ,let us do something to have fun,Just a normal message for testing, nothing is special ,Just a normal message for testing, nothing is special '  
+  },
+  {
+  img:'/images/man.png',
+  username:'yasser',
+  message:'hello how are you to day ,let us do something to have fun,Just a normal message for testing, nothing is special ,Just a normal message for testing, nothing is special ,Just a normal message for testing, nothing is special '  
+  },
+  {
+  img:'/images/man.png',
+  username:'yasser',
+  message:'hello how are you to day ,let us do something to have fun,Just a normal message for testing, nothing is special '  
+  },
+]

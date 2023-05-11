@@ -19,7 +19,7 @@ const data = fakeGigs
     <div>
       <div className="max-w-[1200px] mx-auto p-4">
         <span className="py-10 block text-gray-500">
-          Fiverr>Graphic& Designs
+          Fiverr{'>'}Graphic& Designs
         </span>
         <h1 className="text-3xl font-bold py-4">AI Artists</h1>
         <p className="text-gray-500">
@@ -49,7 +49,7 @@ const data = fakeGigs
             <ChevronDownIcon onClick={()=>setOpen(prev=>!prev)}  className="h-5 text-gray-500 cursor-pointer" />
           { open && <div className="absolute top-6 right-0 px-4 py-2 border rounded-md flex flex-col bg-white z-10">
             { sort ==='sales' && <span onClick={()=>setTheSort('createdAt')} className="cursor-pointer">Newest</span>}
-           {  sort === 'createdAt' &&<span onClick={()=>setTheSort('sales')}  className="cursor-pointer">Best Selling</span>}
+          {  sort === 'createdAt' &&<span onClick={()=>setTheSort('sales')}  className="cursor-pointer">Best Selling</span>}
             </div>}
           </div>
         </div>
