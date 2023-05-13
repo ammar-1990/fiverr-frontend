@@ -29,3 +29,7 @@
 .myScrollTwo::-webkit-scrollbar-thumb{
     @apply bg-zinc-600 rounded-full
 }
+
+.input {
+    @apply w-full p-4 outline-none border border-zinc-500 rounded-md focus:ring-1 focus:border-green-400 focus:ring-green-400
+}

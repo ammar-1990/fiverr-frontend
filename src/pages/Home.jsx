@@ -8,7 +8,10 @@ import FeaturesTwo from "../components/FeaturesTwo"
 
 
 
+
 const Home = () => {
+
+
 
 const data = fakeData
 const projectData = projects

@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useAuth } from "../contexts/authContext";
+import newAxios from "../utils/axiosRequest";
 
 const Navbar = () => {
+  const { user: currentUser,dispatch } = useAuth();
   const { pathname } = useLocation();
   console.log(pathname);
   const [scrolled, setScrolled] = useState(false);
@@ -18,10 +21,15 @@ const Navbar = () => {
     };
   }, []);
 
-  const currentUser = {
-    id: "12",
-    name: "ammar",
-    isSeller: true,
+  const logoutHandler = async () => {
+    try {
+
+      await newAxios.post('auths/logout')
+      localStorage.removeItem('currentUser')
+      dispatch({type:'LOGOUT'})
+    } catch (err) {
+      console.log(err)
+    }
   };
 
   return (
@@ -48,14 +56,14 @@ const Navbar = () => {
           <span className="navLink  hidden sm:block ">Fiver business</span>
           <span className="navLink hidden sm:block">Explore</span>
           <span className="navLink hidden sm:block">English</span>
-          {!currentUser&&<span className="navLink">Sign in</span>}
-          {!currentUser.isSeller && (
+          {!currentUser && <span className="navLink">Sign in</span>}
+          {!currentUser?.isSeller && (
             <span className="navLink">Become a seller</span>
           )}
           {!currentUser && (
-            <button className="p-2 px-4 border-white border rounded-lg  hover:border-green-400 hover:bg-green-400">
+           <Link to='/register'><button  className="p-2 px-4 border-white border rounded-lg  hover:border-green-400 hover:bg-green-400">
               Join
-            </button>
+            </button></Link> 
           )}
           {currentUser && (
             <div
@@ -64,13 +72,16 @@ const Navbar = () => {
             >
               <img
                 className="h-8 rounded-full object-cover "
-                src="https://static.vecteezy.com/system/resources/previews/000/439/863/original/vector-users-icon.jpg"
+                src={
+                  currentUser.img ||
+                  "https://static.vecteezy.com/system/resources/previews/000/439/863/original/vector-users-icon.jpg"
+                }
                 alt="profile"
               />
-              <span>{currentUser.name}</span>
+              <span className='capitalize'>{currentUser?.username}</span>
               {showMenu && (
                 <div className="p-6 flex flex-col gap-3 absolute top-12  bg-white border rounded-lg w-56 right-0 text-gray-500">
-                  {currentUser.isSeller && (
+                  {currentUser?.isSeller && (
                     <div className="flex flex-col gap-3">
                       <Link to={"/mygigs"}>
                         <span>Gigs</span>
@@ -86,7 +97,7 @@ const Navbar = () => {
                   <Link to={"/messages"}>
                     <span>Messages</span>
                   </Link>
-                  <span>Log out</span>
+                  <span onClick={logoutHandler}>Log out</span>
                 </div>
               )}
             </div>
@@ -96,7 +107,7 @@ const Navbar = () => {
       {(scrolled || pathname !== "/") && (
         <div className="border border-l-0 border-r-0 border-gray-400">
           <div className="max-w-[1200px] mx-auto flex justify-between  py-1 text-gray-500 overflow-x-scroll gap-8 scroll myScroll">
-            <Link  className="flex-shrink-0" to={"/"}>
+            <Link className="flex-shrink-0" to={"/"}>
               <span>Graphics & Design</span>
             </Link>
             <Link className="flex-shrink-0" to={"/"}>
@@ -129,7 +140,6 @@ const Navbar = () => {
           </div>
         </div>
       )}
-  
     </header>
   );
 };

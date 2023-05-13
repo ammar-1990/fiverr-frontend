@@ -53,8 +53,7 @@ const Slider = ({data,projects}) => {
     className='mx-auto max-w-[1200px] overflow-auto my-28 '
       spaceBetween={20}
       slidesPerView={5}
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
+ 
       
     >
         {projects ? data.map(el=><SwiperSlide key={el.id}><Project {...el} /></SwiperSlide>) : data.map(el=><SwiperSlide key={el.id}><CategoryCard {...el} /></SwiperSlide>)}

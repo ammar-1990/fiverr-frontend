@@ -15,6 +15,10 @@ import MyGigs from './pages/MyGigs'
 import Add from './pages/Add'
 import Messages from './pages/Messages'
 import Message from './pages/Message'
+import Login from './pages/Login'
+import AuthContextProvider from './contexts/authContext';
+import AuthRequired from './components/AuthRequired';
+import Register from './pages/Register';
 
 
 const router = createBrowserRouter([
@@ -57,13 +61,23 @@ const router = createBrowserRouter([
         element:<Message />
       },
     ]
-  }
+  },
+  {
+    path:'/login',
+    element:<Login />
+  },
+  {
+    path:'/register',
+    element:<Register />
+  },
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <AuthContextProvider>
 <RouterProvider router={router} />
+</AuthContextProvider>
   </React.StrictMode>
 );
 
