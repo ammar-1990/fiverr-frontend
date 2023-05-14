@@ -56,7 +56,7 @@ const Navbar = () => {
           <span className="navLink  hidden sm:block ">Fiver business</span>
           <span className="navLink hidden sm:block">Explore</span>
           <span className="navLink hidden sm:block">English</span>
-          {!currentUser && <span className="navLink">Sign in</span>}
+          {!currentUser && <Link to='/login' className="navLink">Sign in</Link>}
           {!currentUser?.isSeller && (
             <span className="navLink">Become a seller</span>
           )}

@@ -17,10 +17,12 @@ import Messages from './pages/Messages'
 import Message from './pages/Message'
 import Login from './pages/Login'
 import AuthContextProvider from './contexts/authContext';
-import AuthRequired from './components/AuthRequired';
 import Register from './pages/Register';
+import {QueryClient, QueryClientProvider} from '@tanstack/react-query'
 
 
+
+const queryClint = new QueryClient()
 const router = createBrowserRouter([
 
   {
@@ -75,9 +77,11 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <QueryClientProvider client={queryClint}>
     <AuthContextProvider>
 <RouterProvider router={router} />
 </AuthContextProvider>
+</QueryClientProvider>
   </React.StrictMode>
 );
 
