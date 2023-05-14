@@ -1,6 +1,6 @@
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import { useEffect, useRef, useState } from "react";
-import { fakeGigs } from "../fakeData";
+
 import GigCard from '../components/GigCard'
 import { useQuery } from "@tanstack/react-query";
 import newAxios from '../utils/axiosRequest'
@@ -26,7 +26,7 @@ const maxRef = useRef()
 
   console.log(data)
 
-useEffect(()=>{refetch();console.log(sort)},[sort])
+useEffect(()=>{refetch();console.log(sort)},[sort,refetch])
 
 
 
@@ -42,7 +42,7 @@ const apply = ()=>{
   refetch()
 }
   return (
-    <div>
+    <div className="overflow-hidden">
       <div className="max-w-[1200px] mx-auto p-4">
         <span className="py-10 block text-gray-500">
           Fiverr{'>'}Graphic& Designs
@@ -82,7 +82,7 @@ const apply = ()=>{
           </div>
         </div>
 
-        <div className="flex gap-8 items-center justify-between flex-wrap my-20">
+        <div className="flex gap-8 items-center justify-center md:justify-between flex-wrap my-20">
 {isLoading ? 'Loading' : error ? 'something went wrong' : data?.map(gig=><GigCard key={gig._id} {...gig} />)}
         </div>
       </div>

@@ -5,7 +5,7 @@ import { useQuery } from "@tanstack/react-query"
 import newAxios from '../utils/axiosRequest'
 
 
-const GigCard = ({title ,desc, username ,price,totalStars,startNumber,cover,images,userId}) => {
+const GigCard = ({title ,desc, username,_id ,price,totalStars,startNumber,cover,images,userId}) => {
 
 
 
@@ -15,7 +15,7 @@ const GigCard = ({title ,desc, username ,price,totalStars,startNumber,cover,imag
      }
    
    
-     const { isLoading, error, data, refetch } = useQuery({
+     const { isLoading, error, data } = useQuery({
        queryKey: ['userInfo'],
        queryFn: fetchGigs
      })
@@ -26,7 +26,7 @@ const GigCard = ({title ,desc, username ,price,totalStars,startNumber,cover,imag
 
 
   return (
-    <Link to={'/gig/123'}>
+    <Link to={`/gig/${_id}`}>
         <div className="border w-[265px]">
           <img src={cover} alt="img" className="h-[150px] w-full object-cover"/>  
 

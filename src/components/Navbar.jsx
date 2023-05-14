@@ -49,7 +49,7 @@ const Navbar = () => {
           </div>
         </Link>
         <nav
-          className={`flex gap-10 ${
+          className={`flex gap-3 md:gap-10 text-xs md:text-base ${
             scrolled || pathname !== "/" ? "text-black" : "text-white"
           } font-semibold text-sm items-center`}
         >
