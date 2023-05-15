@@ -3,9 +3,9 @@ import { Navigate } from "react-router-dom"
 
 const AuthRequired = ({children}) => {
 
-    const {user} = useAuth()
+    const {user ,loading} = useAuth()
   return (
-!user ? <Navigate to={'/login'} /> : children
+!user && !loading ? <Navigate to={'/'} /> : children
   )
 }
 

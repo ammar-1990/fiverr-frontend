@@ -4,7 +4,7 @@ import { useAuth } from "../contexts/authContext";
 import newAxios from "../utils/axiosRequest";
 
 const Navbar = () => {
-  const { user: currentUser,dispatch } = useAuth();
+  const { user: currentUser,loading,dispatch } = useAuth();
   const { pathname } = useLocation();
   console.log(pathname);
   const [scrolled, setScrolled] = useState(false);
@@ -48,7 +48,7 @@ const Navbar = () => {
             fiverr<span className="text-green-300">.</span>
           </div>
         </Link>
-        <nav
+       {!loading && <nav
           className={`flex gap-3 md:gap-10 text-xs md:text-base ${
             scrolled || pathname !== "/" ? "text-black" : "text-white"
           } font-semibold text-sm items-center`}
@@ -83,26 +83,26 @@ const Navbar = () => {
                 <div className="p-6 flex flex-col gap-3 absolute top-12  bg-white border rounded-lg w-56 right-0 text-gray-500">
                   {currentUser?.isSeller && (
                     <div className="flex flex-col gap-3">
-                      <Link to={"/mygigs"}>
-                        <span>Gigs</span>
+                      <Link  className="hover:bg-gray-300 hover:text-white  px-4 py-2 rounded-md w-full " to={"/mygigs"}>
+                        <span >Gigs</span>
                       </Link>
-                      <Link to={"/add"}>
-                        <span>Add new gig</span>
+                      <Link className="hover:bg-gray-300 hover:text-white  px-4 py-2 rounded-md w-full " to={"/add"}>
+                        <span >Add new gig</span>
                       </Link>
                     </div>
                   )}
-                  <Link to={"/orders"}>
-                    <span>Orders</span>
+                  <Link className="hover:bg-gray-300 hover:text-white  px-4 py-2 rounded-md w-full " to={"/orders"}>
+                    <span >Orders</span>
                   </Link>
-                  <Link to={"/messages"}>
-                    <span>Messages</span>
+                  <Link className="hover:bg-gray-300 hover:text-white  px-4 py-2 rounded-md w-full " to={"/messages"}>
+                    <span >Messages</span>
                   </Link>
-                  <span onClick={logoutHandler}>Log out</span>
+                  <span className="hover:bg-gray-300 hover:text-white  px-4 py-2 rounded-md w-full " onClick={logoutHandler}>Log out</span>
                 </div>
               )}
             </div>
           )}
-        </nav>
+        </nav>}
       </div>
       {(scrolled || pathname !== "/") && (
         <div className="border border-l-0 border-r-0 border-gray-400">

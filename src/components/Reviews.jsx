@@ -19,7 +19,7 @@ const Reviews = ({id}) => {
         return theData;
       };
     const queryClient = useQueryClient()
-      const { isLoading, error, data,isError } = useQuery({
+      const { isLoading, error, data } = useQuery({
         queryKey: ["reviews"],
         queryFn: fetchReviews,
       });
@@ -28,7 +28,7 @@ const Reviews = ({id}) => {
         mutationFn:(review)=>newAxios.post('/reviews',review),onSuccess:()=>{queryClient.invalidateQueries(['reviews'])}
       })
 
-
+      console.log(data)
 const handleSubmit = (e)=>{
 e.preventDefault()
 
@@ -67,7 +67,7 @@ setStar('')
     <option value="5">5 start</option>
 </select>
 <button disabled={!desc || !star || loading} className="text-white bg-green-400 py-3 disabled:bg-gray-400 ">{loading? 'Loading':'Send'}</button>
-{reError && <p className="text-red-400 text-xs">{reError.response.data}</p>}
+{reError && <p className="text-red-400 text-xs uppercase">{reError.response.data}</p>}
 
 </form>
 

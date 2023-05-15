@@ -18,7 +18,6 @@ const maxRef = useRef()
  return theData
   }
 
-
   const { isLoading, error, data, refetch } = useQuery({
     queryKey: ['gigs'],
     queryFn: fetchGigs

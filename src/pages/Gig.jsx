@@ -32,12 +32,12 @@ const Gig = () => {
     queryFn: fetchGigs,
   });
 
-
+const userId = data?.userId
   const {
     isLoading: isLoadngUser,
     error: errorUser,
     data: dataUser,
-    refetch,
+   
   } = useQuery({
     queryKey: ["user"],
     queryFn: () => {
@@ -47,13 +47,11 @@ const Gig = () => {
         .catch((err) => console.log(err.response.data));
       return theData;
     },
+    enabled:!!userId
   });
 
   const queryClient = useQueryClient();
 
-  useEffect(() => {
-    refetch();
-  }, [data, refetch]);
 
   useEffect(() => {
     return () => {

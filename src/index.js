@@ -19,6 +19,7 @@ import Login from './pages/Login'
 import AuthContextProvider from './contexts/authContext';
 import Register from './pages/Register';
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query'
+import AuthRequired from './components/AuthRequired'
 
 
 
@@ -44,7 +45,7 @@ const router = createBrowserRouter([
       },
       {
         path:'orders',
-        element:<Orders />
+        element:<AuthRequired><Orders /></AuthRequired>
       },
       {
         path:'mygigs',
@@ -56,11 +57,11 @@ const router = createBrowserRouter([
       },
       {
         path:'messages',
-        element:<Messages />
+        element:<AuthRequired><Messages /></AuthRequired>
       },
       {
         path:'message/:id',
-        element:<Message />
+        element:<AuthRequired><Message /></AuthRequired>
       },
     ]
   },
