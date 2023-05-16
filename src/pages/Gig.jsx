@@ -11,13 +11,14 @@ import { ArrowPathIcon } from "@heroicons/react/24/outline";
 import { CheckIcon } from "@heroicons/react/24/outline";
 import { useQuery } from "@tanstack/react-query";
 import newAxios from "../utils/axiosRequest";
-import { useParams } from "react-router-dom";
-import { useEffect } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Reviews from "../components/Reviews";
 
 const Gig = () => {
   const params = useParams();
   const id = params.id;
+  const [errorGig,setErrorGig] = useState('')
 
   const fetchGigs = () => {
     const theData = newAxios
@@ -60,6 +61,20 @@ const userId = data?.userId
     };
   }, [queryClient]);
 
+
+const navigate = useNavigate()
+
+  const handleOrder = async ()=>{
+    setErrorGig('')
+try {
+  const res = await newAxios.post(`/orders/${id}`)
+  console.log(res.data)
+  navigate('/orders')
+} catch (error) {
+setErrorGig(error.response.data)
+}
+   
+  }
   return (
     <div>
       {isLoading ? (
@@ -141,7 +156,7 @@ const userId = data?.userId
                       dataUser?.img ||
                       "https://static.vecteezy.com/system/resources/previews/000/439/863/original/vector-users-icon.jpg"
                     }
-                    className="w-20 h-20 rounded-full object-contain cursor-pointer shadow-md"
+                    className="w-16 h-16 rounded-full object-contain cursor-pointer shadow-sm shadow-black"
                     alt=""
                   />
                   <div className="flex flex-col gap-3">
@@ -215,9 +230,10 @@ const userId = data?.userId
                 ))}
               </div>
 
-              <button className="text-white bg-green-400 py-2 rounded-sm">
+              <button onClick={handleOrder} className="text-white bg-green-400 py-2 rounded-sm">
                 Continue
               </button>
+              {errorGig&&<p className="text-red-500 text-sm py-6">{errorGig}</p>}
             </div>
           </div>
         </div>

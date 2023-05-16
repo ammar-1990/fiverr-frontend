@@ -49,8 +49,7 @@ const Message = () => {
   };
 
   const {
-    isLoading: toLoad,
-    error: toError,
+ 
     data: theUser,
   } = useQuery({
     queryKey: ["user"],

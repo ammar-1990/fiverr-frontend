@@ -2,7 +2,7 @@ import {StarIcon} from '@heroicons/react/24/solid'
 import {HandThumbUpIcon} from '@heroicons/react/24/outline'
 import {HandThumbDownIcon} from '@heroicons/react/24/outline'
 import newAxios from '../utils/axiosRequest'
-import { useQuery } from '@tanstack/react-query'
+
 import { useEffect, useState } from 'react'
 
 const Review = ({userId,desc,star}) => {
@@ -10,10 +10,10 @@ const Review = ({userId,desc,star}) => {
   const [theUser,setTheUser] = useState(null)
 
 useEffect(()=>{
-const res = newAxios
+newAxios
 .get(`/users/${userId}`).then((res)=>{setTheUser(res.data);console.log(res.data)})
 
-},[])
+},[userId])
 
 
 console.log(userId)

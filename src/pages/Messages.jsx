@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { fakeMessages } from "../fakeData"
+
 import Moment from 'react-moment';
 import newAxios from '../utils/axiosRequest'
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
@@ -25,7 +25,7 @@ console.log(data)
 console.log(currentUser)
   const queryClient = useQueryClient()
 
-  const {mutate,isLoading:loading,error:reError} = useMutation({
+  const {mutate} = useMutation({
     mutationFn:(id)=>newAxios.put(`/conversations/${id}`),onSuccess:()=>{queryClient.invalidateQueries(['conversations'])}
   })
 
@@ -42,7 +42,7 @@ useEffect(()=>{
     queryClient.removeQueries("conversations");
 
   };
-},[])
+},[queryClient])
 
   return (
     <div>

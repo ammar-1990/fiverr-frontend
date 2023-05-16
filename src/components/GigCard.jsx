@@ -28,7 +28,8 @@ const GigCard = ({title ,desc, username,_id ,price,totalStars,startNumber,cover,
   return (
     <Link to={`/gig/${_id}`}>
         <div className="border w-[265px]">
-          <img src={cover} alt="img" className="h-[150px] w-full object-cover"/>  
+          <div className="pt-4">    <img src={cover} alt="img" className="h-[150px] w-full object-contain"/>  </div>
+      
 
           <div className="p-4 border border-t-0 border-r-0 border-l-o">
 {isLoading? 'Loading':error?"something went wrong" : <div className="flex items-center gap-3">
