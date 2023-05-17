@@ -5,13 +5,42 @@ import TrustedBy from "../components/TrustedBy"
 import Features from "../components/Features"
 import { fakeData, projects } from "../fakeData"
 import FeaturesTwo from "../components/FeaturesTwo"
-
+import { useEffect } from "react"
+import newAxios from '../utils/axiosRequest'
+import { useQuery, useQueryClient } from "@tanstack/react-query"
 
 
 
 const Home = () => {
+ 
+  const {
+    isLoading,
+    error,
+    data:many,
+   
+  } = useQuery({
+    queryKey: ["many"],
+    queryFn: () => {
+      const theData = newAxios
+        .get(`/gigs/many`)
+        .then((res) => res.data)
+        .catch((err) => console.log(err.response.data));
+      return theData;
+
+    },
+    
+  });
+
+  console.log(many)
+
+  const queryClient = useQueryClient();
+useEffect(()=>{
+
+  return ()=>{  queryClient.removeQueries("many");
+}
 
 
+},[queryClient])
 
 const data = fakeData
 const projectData = projects
@@ -20,10 +49,10 @@ const projectData = projects
     <div >
 <Featured />
 <TrustedBy />
-<Slider data={data} />
+<Slider data={data} category={true} />
 <Features />
 <FeaturesTwo />
-<Slider data={projectData} projects/>
+{isLoading ? 'Loading..' : error ? 'something went wrong' : <Slider data={many} projects={true} />}
 
       
     </div>

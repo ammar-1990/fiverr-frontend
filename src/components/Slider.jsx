@@ -5,7 +5,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import CategoryCard from './CategoryCard';
 import Project from './Project';
-const Slider = ({data,projects}) => {
+const Slider = ({data,projects,category}) => {
 
 
   const breakpoints = {
@@ -46,17 +46,19 @@ const Slider = ({data,projects}) => {
     <Swiper
     modules={[Navigation, Pagination]}
 
+
     breakpoints={breakpoints}
     navigation={{enabled:true}}
  style={{padding:"20px",paddingTop:'10px',paddingBottom:'10px'}}
- 
-    className='mx-auto max-w-[1200px] overflow-auto my-28 '
+
+    className={`mx-auto  ${category && 'max-w-[1350px]'} ${projects && 'max-w-[1200px]'}  overflow-auto my-28 `}
       spaceBetween={20}
       slidesPerView={5}
+      slidesPerGroup={5}
  
       
     >
-        {projects ? data.map(el=><SwiperSlide key={el.id}><Project {...el} /></SwiperSlide>) : data.map(el=><SwiperSlide key={el.id}><CategoryCard {...el} /></SwiperSlide>)}
+        {projects ? data.map(el=><SwiperSlide key={el._id}><Project {...el} /></SwiperSlide>) : data.map(el=><SwiperSlide key={el.id}><CategoryCard {...el} /></SwiperSlide>)}
     
 
     </Swiper>
