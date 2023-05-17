@@ -36,7 +36,7 @@ const GigCard = ({title ,desc, username,_id ,price,totalStars,startNumber,cover,
     <img className="w-8 h-8 rounded-full object-contain" src={data.img} alt="profile" />
     <p className="text-gray-500">{data.username}</p>
 </div>}
-
+<h1 className="py-1 capitalize text-gray-600 text-lg font-semibold ">{title}</h1>
 <p className="py-3 text-gray-400 text-sm">{desc}</p>
 <span className="flex items-center gap-1 cursor-pointer">
     <StarIcon className="h-4 text-yellow-500" />

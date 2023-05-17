@@ -2,7 +2,7 @@ import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import { useEffect, useRef, useState } from "react";
 
 import GigCard from '../components/GigCard'
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import newAxios from '../utils/axiosRequest'
 import { useLocation } from "react-router-dom";
 
@@ -40,6 +40,19 @@ setOpen(false)
 const apply = ()=>{
   refetch()
 }
+
+
+const queryClient = useQueryClient();
+
+useEffect(() => {
+  return () => {
+    queryClient.removeQueries("gigs");
+   
+  };
+}, [queryClient]);
+
+
+
   return (
     <div className="overflow-hidden">
       <div className="max-w-[1200px] mx-auto p-4">
@@ -82,6 +95,7 @@ const apply = ()=>{
         </div>
 
         <div className="flex gap-8 items-center justify-center md:justify-between flex-wrap my-20">
+          {data?.length === 0 && <p className="p-7 text-gray-700 flex items-center justify-center capitalize w-full text-6xl">No gigs</p>}
 {isLoading ? 'Loading' : error ? 'something went wrong' : data?.map(gig=><GigCard key={gig._id} {...gig} />)}
         </div>
       </div>

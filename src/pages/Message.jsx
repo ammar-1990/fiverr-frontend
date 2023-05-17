@@ -37,7 +37,9 @@ const Message = () => {
     },
   });
 
-  const otherId = id?.replace(currentUser?._id, "") ;
+  // const otherId = id?.replace(currentUser?._id, "") ;
+  const otherId = id?.split('-')[0].replace(currentUser?._id, "") ;
+  console.log(otherId)
 
 
   const fetchUser = () => {
@@ -73,7 +75,7 @@ const Message = () => {
       <div className="max-w-[1200px] mx-auto ">
         <div className="py-10 uppercase text-gray-500">
           <Link to={"/messages"}>Messages</Link>
-          {">"}John Doe
+          {">"}{theUser?.username}
         </div>
         <div className="h-[300px] overflow-y-scroll  myScrollTwo overfx p-4  shadow-sm shadow-gray-400">
           {isLoading

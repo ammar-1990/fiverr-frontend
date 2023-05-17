@@ -37,20 +37,21 @@ useEffect(() => {
   };
 }, [queryClient]);
 
-
+console.log(data)
 const handleContact = async (el)=>{
 const sellerId = el.sellerId
 const buyerId = el.buyerId
-const id = sellerId + buyerId
+const id = sellerId + buyerId + "-" + el.gigId
 
 try {
+  console.log(id)
   const res =await newAxios(`/conversations/${id}`)
   navigate(`/message/${res.data.id}`)
 }
  catch (error) {
   console.log(error)
   if(error.response.status === 404){
-    const res =await newAxios.post(`/conversations`,{to:currentUser.isSeller ? buyerId : sellerId})
+    const res =await newAxios.post(`/conversations`,{to:currentUser.isSeller ? buyerId : sellerId,gigId:el.gigId})
     navigate(`/message/${res.data.id}`)
   }
 

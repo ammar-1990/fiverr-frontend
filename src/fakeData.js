@@ -1,51 +1,58 @@
 export const fakeData = [
   {
     id: "1",
-    title: "fake card",
-    desc: "first fake data cart",
-    image: "https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg",
+    title: "design",
+
+    image: "https://assets.asana.biz/transform/d2ffb5c8-a7c2-4e39-8447-f8e2501c5bdc/article-project-planning-project-design-2x",
   },
   {
     id: "2",
-    title: "fake card two",
-    desc: "second fake data cart",
+    title: "web",
+  
     image:
-      "https://c8.alamy.com/compfr/2c46hew/selection-3d-de-spheres-et-d-objets-aleatoires-sur-le-socle-devant-la-paroi-orange-illustration-3d-2c46hew.jpg",
+      "https://f.hubspotusercontent10.net/hubfs/6448316/web-programming-languages.jpg",
   },
   {
     id: "3",
-    title: "fake card three",
-    desc: "third fake data cart",
+    title: "animation",
+
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgQbL2l8gyy5etMhGGfC-UYEQuMLNyeFBKOZKum3EY_WsTHEq7PepAwKUE88Bcf_9fHoU&usqp=CAU",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzFwMIfniFoElbelBdz1glVUjlRBoV_V2M6GAgXFgnBcDxIwTGmy_a6iMmDhtC8a-ybLU&usqp=CAU",
   },
   {
     id: "4",
-    title: "fake card four",
-    desc: "fourth fake data cart",
+    title: "music",
+
     image:
-      "https://www.shutterstock.com/image-photo/surreal-concept-roll-world-dice-260nw-1356798002.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsHqdk4iLAfzeGb3dSK5YJl1rwteO_TdxZt3J_dy7Dtl49BDR8Yo_Az1kU-RG2XZYQ6Vw&usqp=CAU",
   },
   {
     id: "5",
-    title: "fake card two",
-    desc: "second fake data cart",
+    title: "content",
+
     image:
-      "https://c8.alamy.com/compfr/2c46hew/selection-3d-de-spheres-et-d-objets-aleatoires-sur-le-socle-devant-la-paroi-orange-illustration-3d-2c46hew.jpg",
+      "https://influencermarketinghub.com/wp-content/uploads/2021/07/gide-1.png",
   },
   {
     id: "6",
-    title: "fake card three",
-    desc: "third fake data cart",
+    title: "teaching",
+   
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgQbL2l8gyy5etMhGGfC-UYEQuMLNyeFBKOZKum3EY_WsTHEq7PepAwKUE88Bcf_9fHoU&usqp=CAU",
+      "https://d138zd1ktt9iqe.cloudfront.net/media/seo_landing_files/file-teaching-skills-1605625101.jpg",
   },
   {
     id: "7",
-    title: "fake card four",
-    desc: "fourth fake data cart",
+    title: "training",
+  
     image:
-      "https://www.shutterstock.com/image-photo/surreal-concept-roll-world-dice-260nw-1356798002.jpg",
+      "https://assets.entrepreneur.com/content/3x2/2000/20160515115001-shutterstock-352158581.jpeg",
+  },
+  {
+    id: "8",
+    title: "marketing",
+  
+    image:
+      "https://www.searchenginejournal.com/wp-content/uploads/2021/08/the-ultimate-guide-to-digital-marketing-61726311bf393-sej.png",
   },
 ];
 
