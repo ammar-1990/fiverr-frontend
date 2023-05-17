@@ -11,7 +11,7 @@ import { ArrowPathIcon } from "@heroicons/react/24/outline";
 import { CheckIcon } from "@heroicons/react/24/outline";
 import { useQuery } from "@tanstack/react-query";
 import newAxios from "../utils/axiosRequest";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import {  useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Reviews from "../components/Reviews";
 

@@ -3,7 +3,7 @@ import Featured from "../components/Featured"
 import Slider from "../components/Slider"
 import TrustedBy from "../components/TrustedBy"
 import Features from "../components/Features"
-import { fakeData, projects } from "../fakeData"
+import { fakeData } from "../fakeData"
 import FeaturesTwo from "../components/FeaturesTwo"
 import { useEffect } from "react"
 import newAxios from '../utils/axiosRequest'
@@ -43,7 +43,7 @@ useEffect(()=>{
 },[queryClient])
 
 const data = fakeData
-const projectData = projects
+
 
   return (
     <div >

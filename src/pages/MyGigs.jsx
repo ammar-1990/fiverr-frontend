@@ -38,8 +38,7 @@ useEffect(() => {
 
 const {
   mutate,
-  isLoading: sendLoad,
-  error: sendError,
+ 
 } = useMutation({
   mutationFn: (id) => newAxios.delete(`/gigs/${id}`),
   onSuccess: () => {
