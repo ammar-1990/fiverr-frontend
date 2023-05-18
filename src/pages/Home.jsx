@@ -31,7 +31,6 @@ const Home = () => {
     
   });
 
-  console.log(many)
 
   const queryClient = useQueryClient();
 useEffect(()=>{

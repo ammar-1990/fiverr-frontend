@@ -6,7 +6,7 @@ import newAxios from "../utils/axiosRequest";
 const Navbar = () => {
   const { user: currentUser,loading,dispatch } = useAuth();
   const { pathname } = useLocation();
-  console.log(pathname);
+
   const [scrolled, setScrolled] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   useEffect(() => {

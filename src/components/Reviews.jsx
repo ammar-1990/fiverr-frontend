@@ -28,7 +28,8 @@ const Reviews = ({id}) => {
         mutationFn:(review)=>newAxios.post('/reviews',review),onSuccess:()=>{queryClient.invalidateQueries(['reviews'])}
       })
 
-      console.log(data)
+    
+      
 const handleSubmit = (e)=>{
 e.preventDefault()
 

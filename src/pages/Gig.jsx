@@ -68,7 +68,7 @@ const navigate = useNavigate()
     setErrorGig('')
 try {
   const res = await newAxios.post(`/orders/${id}`)
-  console.log(res.data)
+
   navigate('/orders')
 } catch (error) {
 setErrorGig(error.response.data)

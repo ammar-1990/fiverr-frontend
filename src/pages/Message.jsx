@@ -39,7 +39,7 @@ const Message = () => {
 
   // const otherId = id?.replace(currentUser?._id, "") ;
   const otherId = id?.split('-')[0].replace(currentUser?._id, "") ;
-  console.log(otherId)
+  
 
 
   const fetchUser = () => {

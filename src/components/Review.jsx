@@ -11,13 +11,13 @@ const Review = ({userId,desc,star}) => {
 
 useEffect(()=>{
 newAxios
-.get(`/users/${userId}`).then((res)=>{setTheUser(res.data);console.log(res.data)})
+.get(`/users/${userId}`).then((res)=>{setTheUser(res.data)})
 
 },[userId])
 
 
-console.log(userId)
-console.log(theUser)
+
+
 
 if(!theUser) return 'Loading...'
   return (

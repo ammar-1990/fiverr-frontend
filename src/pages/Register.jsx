@@ -35,7 +35,7 @@ data.append('upload_preset','fiverr')
 try{
 const res = await axios.post('https://api.cloudinary.com/v1_1/drhzjli1l/image/upload',data)
 const {url} = res.data
-console.log('theURL',url)
+
 return url
 
 }catch(err){
@@ -54,7 +54,7 @@ e.preventDefault()
  const img = await upload(file)
   const theUser  ={username,email,password,country,img,isSeller,phone,desc}
   try{
-    console.log(theUser)
+  
     await newAxios.post('/auths/register',theUser)
     dispatch({type:'LOGIN',payload:theUser})
     localStorage.setItem('currentUser',JSON.stringify(theUser))

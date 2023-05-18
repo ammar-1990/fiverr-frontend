@@ -23,9 +23,9 @@ const maxRef = useRef()
     queryFn: fetchGigs
   })
 
-  console.log(data)
 
-useEffect(()=>{refetch();console.log(sort)},[sort,refetch])
+
+useEffect(()=>{refetch()},[sort,refetch])
 
 
 

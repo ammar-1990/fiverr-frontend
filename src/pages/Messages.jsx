@@ -21,8 +21,7 @@ const { user:currentUser } = useAuth()
     queryFn: fetchConversations,
   });
 
-console.log(data)
-console.log(currentUser)
+
   const queryClient = useQueryClient()
 
   const {mutate} = useMutation({

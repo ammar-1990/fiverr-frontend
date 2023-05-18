@@ -23,8 +23,7 @@ const {user:currentUser} = useAuth()
     queryFn: fetchIndividuals,
     enabled:!!currentUser?._id
   });
-console.log(data)
-console.log(currentUser?._id)
+
 
 const queryClient = useQueryClient();
 

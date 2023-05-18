@@ -18,7 +18,7 @@ const upload = async (file) => {
       data
     );
     const { url } = res.data;
-    console.log("theURL", url);
+   
     return url;
   } catch (err) {
     console.log(err);
@@ -35,7 +35,7 @@ const Add = () => {
   const [state, dispatch] = useReducer(gigReducer, INITIAL_STATE);
 
   const handleChange = (e) => {
-    console.log(state);
+  
     dispatch({
       type: "CHANGE_INPUT",
       payload: { name: e.target.name, value: e.target.value },
