@@ -54,7 +54,7 @@ const Slider = ({data,projects,category}) => {
     className={`mx-auto  ${category && 'max-w-[1350px]'} ${projects && 'max-w-[1200px]'}  overflow-auto my-28 `}
       spaceBetween={20}
       slidesPerView={5}
-      slidesPerGroup={5}
+      
  
       
     >
